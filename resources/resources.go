@@ -4,7 +4,6 @@ import (
 	_ "embed"
 	"encoding/base64"
 	"encoding/json"
-	"strings"
 )
 
 var (
@@ -70,5 +69,5 @@ func decode(s string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	return strings.TrimSpace(string(d)), nil
+	return string(d), nil
 }
