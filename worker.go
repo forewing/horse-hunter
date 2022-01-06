@@ -54,10 +54,11 @@ func (w *Worker) Stop() error {
 
 func (w *Worker) work() {
 	ticker := time.NewTicker(w.Interval)
+	w.WriteOnce()
 	for {
 		select {
 		case <-ticker.C:
-			clipboard.Write(clipboard.FmtText, []byte(w.GetLine()))
+			w.WriteOnce()
 		case <-w.ch:
 			ticker.Stop()
 			w.ch = nil
@@ -65,6 +66,10 @@ func (w *Worker) work() {
 			return
 		}
 	}
+}
+
+func (w *Worker) WriteOnce() {
+	clipboard.Write(clipboard.FmtText, []byte(w.GetLine()))
 }
 
 func (w *Worker) Cleanup() {
