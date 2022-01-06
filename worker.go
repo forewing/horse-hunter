@@ -20,8 +20,9 @@ type Worker struct {
 }
 
 var (
-	ErrWorkerAlreadyStarted = errors.New("worker already started")
-	ErrWorkerAlreadyStopped = errors.New("worker already stopped")
+	ErrWorkerIntervalInvalid = errors.New("non-positive interval for worker")
+	ErrWorkerAlreadyStarted  = errors.New("worker already started")
+	ErrWorkerAlreadyStopped  = errors.New("worker already stopped")
 )
 
 // NewWorker return a new worker
@@ -42,6 +43,10 @@ func (w *Worker) GetLine() string {
 func (w *Worker) Start() error {
 	if w.ch != nil {
 		return ErrWorkerAlreadyStarted
+	}
+
+	if w.Interval <= 0 {
+		return ErrWorkerIntervalInvalid
 	}
 
 	w.ch = make(chan bool)
