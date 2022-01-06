@@ -17,6 +17,7 @@ func init() {
 	rng = rand.New(source)
 }
 
+// GetLine by level and target arguments
 func GetLine(level Level, target Target) string {
 	lines := &resources.LinesMax
 	if level == LevelMin || (level == LevelMix && rng.Float64() < 0.5) {

@@ -1,7 +1,9 @@
 package hunter
 
+// Level of insult
 type Level int
 
+// Target of insult
 type Target int
 
 const (
