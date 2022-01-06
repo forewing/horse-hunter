@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"os"
 	"os/signal"
 	"syscall"
@@ -32,6 +33,8 @@ func main() {
 	if err := w.Start(); err != nil {
 		panic(err)
 	}
+	fmt.Printf("Worker started, level: %v, target: %v, interval: %v\n",
+		hunter.LevelName[w.Level], hunter.TargetName[w.Target], w.Interval)
 
 	sig := make(chan os.Signal, 1)
 	signal.Notify(sig, os.Interrupt, syscall.SIGTERM)

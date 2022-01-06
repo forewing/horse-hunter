@@ -28,4 +28,7 @@ var (
 		"male":   TargetMale,
 		"mix":    TargetMix,
 	}
+
+	LevelName  = []string{"max", "min", "mix"}
+	TargetName = []string{"female", "male", "mix"}
 )
