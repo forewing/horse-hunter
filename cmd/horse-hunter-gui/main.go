@@ -67,6 +67,7 @@ func main() {
 
 	grid := container.New(layout.NewFormLayout(), rows...)
 	myWindow.SetContent(grid)
+	myWindow.CenterOnScreen()
 	myWindow.ShowAndRun()
 
 	worker.Stop()
