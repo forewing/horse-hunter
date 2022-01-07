@@ -70,5 +70,5 @@ go install fyne.io/fyne/v2/cmd/fyne@latest
 go build -trimpath -ldflags "-s -w" ./cmd/horse-hunter-gui
 
 # Bundle package
-fyne package -icon resources/icon.png -name HorseHunter -release -exe horse-hunter-gui
+fyne package -icon ./cmd/horse-hunter-gui/icon.png -name HorseHunter -release -exe horse-hunter-gui
 ```

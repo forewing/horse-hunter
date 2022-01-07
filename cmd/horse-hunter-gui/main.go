@@ -49,6 +49,7 @@ func main() {
 	myApp := app.New()
 	myWindow := myApp.NewWindow("Horse Hunter")
 	myApp.Settings().SetTheme(&myTheme{})
+	myWindow.SetIcon(myIcon{})
 
 	setupWidgets()
 	rows := []fyne.CanvasObject{
