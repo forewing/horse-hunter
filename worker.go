@@ -59,9 +59,13 @@ func ValidateWorkerInterval(interval time.Duration) error {
 	return nil
 }
 
+func (w *Worker) IsRunning() bool {
+	return w.ch != nil
+}
+
 // Start the worker
 func (w *Worker) Start() error {
-	if w.ch != nil {
+	if w.IsRunning() {
 		return ErrWorkerAlreadyStarted
 	}
 
@@ -77,7 +81,7 @@ func (w *Worker) Start() error {
 
 // Stop the worker
 func (w *Worker) Stop() error {
-	if w.ch == nil {
+	if !w.IsRunning() {
 		return ErrWorkerAlreadyStopped
 	}
 
