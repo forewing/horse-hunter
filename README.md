@@ -46,6 +46,8 @@ Usage of ./horse-hunter:
 
 ## GUI
 
+<img src="https://user-images.githubusercontent.com/13747187/148613206-508d9ed9-a952-4ea7-9a1d-8aeecdbb9c18.png" alt="showcase" width="50%"/>
+
 ### Simple executable
 
 ```shell
