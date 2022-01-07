@@ -9,7 +9,7 @@
 fmt.Println(hunter.GetLine(hunter.LevelMax, hunter.TargetMale))
 
 // create a worker
-worker := hunter.NewWorker(hunter.LevelMix, hunter.TargetMix, time.Millisecond*200)
+worker := hunter.NewWorkerDefault()
 
 // get a single insult
 fmt.Println(worker.GetLine())

@@ -34,6 +34,15 @@ func NewWorker(level Level, target Target, interval time.Duration) *Worker {
 	}
 }
 
+// NewWorker return a new worker with default config
+func NewWorkerDefault() *Worker {
+	return &Worker{
+		Level:    LevelDefault,
+		Target:   TargetDefault,
+		Interval: IntervalDefault,
+	}
+}
+
 // GetLine return an insult
 func (w *Worker) GetLine() string {
 	return GetLine(w.Level, w.Target)

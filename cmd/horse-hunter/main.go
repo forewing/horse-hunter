@@ -6,15 +6,14 @@ import (
 	"os"
 	"os/signal"
 	"syscall"
-	"time"
 
 	hunter "github.com/forewing/go-horse-hunter"
 )
 
 var (
-	flagLevel    = flag.String("level", "max", "insult level, [max | min | mix]")
-	flagTarget   = flag.String("target", "female", "insult target, [female | male | mix]")
-	flagInterval = flag.Duration("interval", time.Millisecond*200, "clipboard update interval")
+	flagLevel    = flag.String("level", hunter.LevelName[hunter.LevelDefault], "insult level, [max | min | mix]")
+	flagTarget   = flag.String("target", hunter.TargetName[hunter.TargetDefault], "insult target, [female | male | mix]")
+	flagInterval = flag.Duration("interval", hunter.IntervalDefault, "clipboard update interval")
 )
 
 func main() {

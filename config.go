@@ -1,5 +1,9 @@
 package hunter
 
+import (
+	"time"
+)
+
 // Level of insult
 type Level int
 
@@ -7,13 +11,17 @@ type Level int
 type Target int
 
 const (
-	LevelMax Level = 0
-	LevelMin Level = 1
-	LevelMix Level = 2
+	LevelMax     Level = 0
+	LevelMin     Level = 1
+	LevelMix     Level = 2
+	LevelDefault Level = LevelMax
 
-	TargetFemale Target = 0
-	TargetMale   Target = 1
-	TargetMix    Target = 2
+	TargetFemale  Target = 0
+	TargetMale    Target = 1
+	TargetMix     Target = 2
+	TargetDefault Target = TargetFemale
+
+	IntervalDefault time.Duration = time.Millisecond * 200
 )
 
 var (
