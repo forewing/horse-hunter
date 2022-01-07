@@ -19,8 +19,12 @@ type Worker struct {
 	ch chan bool
 }
 
+const (
+	WorkerIntervalMin = time.Millisecond * 10
+)
+
 var (
-	ErrWorkerIntervalInvalid = errors.New("non-positive interval for worker")
+	ErrWorkerIntervalInvalid = errors.New("worker interval to small (<10ms)")
 	ErrWorkerAlreadyStarted  = errors.New("worker already started")
 	ErrWorkerAlreadyStopped  = errors.New("worker already stopped")
 )
@@ -48,14 +52,21 @@ func (w *Worker) GetLine() string {
 	return GetLine(w.Level, w.Target)
 }
 
+func ValidateWorkerInterval(interval time.Duration) error {
+	if interval < WorkerIntervalMin {
+		return ErrWorkerIntervalInvalid
+	}
+	return nil
+}
+
 // Start the worker
 func (w *Worker) Start() error {
 	if w.ch != nil {
 		return ErrWorkerAlreadyStarted
 	}
 
-	if w.Interval <= 0 {
-		return ErrWorkerIntervalInvalid
+	if err := ValidateWorkerInterval(w.Interval); err != nil {
+		return err
 	}
 
 	w.ch = make(chan bool)
