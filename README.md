@@ -29,7 +29,11 @@ hunter.Cleanup()
 
 ## CLI
 
-```
+```shell
+# Build
+go build ./cmd/horse-hunter
+
+# Run
 $ horse-hunter -h
 Usage of ./horse-hunter:
   -interval duration
@@ -38,4 +42,33 @@ Usage of ./horse-hunter:
         insult level, [max | min | mix] (default "max")
   -target string
         insult target, [female | male | mix] (default "female")
+```
+
+## GUI
+
+### Simple executable
+
+```shell
+go build ./cmd/horse-hunter-gui
+```
+
+### Package for distribution
+
+1. Windows
+
+```
+go build -trimpath -ldflags "-s -w -H=windowsgui" -o HorseHunter.exe ./cmd/horse-hunter-gui
+```
+
+2. macOS
+
+```shell
+# Install fyne cli tools
+go install fyne.io/fyne/v2/cmd/fyne@latest
+
+# Build binary
+go build -trimpath -ldflags "-s -w" ./cmd/horse-hunter-gui
+
+# Bundle package
+fyne package -icon resources/icon.png -name HorseHunter -release -exe horse-hunter-gui
 ```

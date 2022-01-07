@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+*.app
 
 horse-hunter
 horse-hunter-gui
