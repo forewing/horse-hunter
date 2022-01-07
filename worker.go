@@ -2,6 +2,9 @@ package hunter
 
 import (
 	"errors"
+	"os"
+	"os/signal"
+	"syscall"
 	"time"
 
 	"golang.design/x/clipboard"
@@ -114,4 +117,12 @@ func (w *Worker) WriteOnce() {
 // Cleanup the clipboard
 func Cleanup() {
 	clipboard.Write(clipboard.FmtText, []byte(""))
+}
+
+// StopWaitSignal block until receive SIGINT or SIGTERM, then stop the worker
+func (w *Worker) StopWaitSignal() {
+	sig := make(chan os.Signal, 1)
+	signal.Notify(sig, syscall.SIGINT, syscall.SIGTERM)
+	<-sig
+	w.Stop()
 }

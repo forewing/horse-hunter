@@ -3,9 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"os"
-	"os/signal"
-	"syscall"
 
 	hunter "github.com/forewing/go-horse-hunter"
 )
@@ -35,8 +32,5 @@ func main() {
 	fmt.Printf("Worker started, level: %v, target: %v, interval: %v\n",
 		hunter.LevelName[w.Level], hunter.TargetName[w.Target], w.Interval)
 
-	sig := make(chan os.Signal, 1)
-	signal.Notify(sig, os.Interrupt, syscall.SIGTERM)
-	<-sig
-	w.Stop()
+	w.StopWaitSignal()
 }
