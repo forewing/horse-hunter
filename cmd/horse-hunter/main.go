@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	hunter "github.com/forewing/go-horse-hunter"
+	hunter "github.com/forewing/horse-hunter"
 )
 
 var (

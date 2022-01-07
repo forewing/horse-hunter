@@ -1,4 +1,4 @@
-module github.com/forewing/go-horse-hunter
+module github.com/forewing/horse-hunter
 
 go 1.17
 

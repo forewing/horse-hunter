@@ -1,6 +1,6 @@
 # Horse Hunter (Go Implementation)
 
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/forewing/go-horse-hunter)](https://pkg.go.dev/github.com/forewing/go-horse-hunter)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/forewing/horse-hunter)](https://pkg.go.dev/github.com/forewing/horse-hunter)
 
 ## API
 

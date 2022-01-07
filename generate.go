@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/forewing/go-horse-hunter/resources"
+	"github.com/forewing/horse-hunter/resources"
 )
 
 var (

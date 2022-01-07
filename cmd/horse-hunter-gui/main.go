@@ -13,7 +13,7 @@ import (
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
-	hunter "github.com/forewing/go-horse-hunter"
+	hunter "github.com/forewing/horse-hunter"
 )
 
 const (
