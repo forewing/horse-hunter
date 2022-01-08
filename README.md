@@ -29,6 +29,8 @@ hunter.Cleanup()
 
 ## CLI
 
+> On Linux, you need `libx11-dev` installed.
+
 ```shell
 # Build
 go build ./cmd/horse-hunter
@@ -73,4 +75,14 @@ go build -trimpath -ldflags "-s -w" ./cmd/horse-hunter-gui
 
 # Bundle package
 fyne package -icon ./cmd/horse-hunter-gui/icon.png -name HorseHunter -release -exe horse-hunter-gui
+```
+
+3. Linux
+
+```shell
+# Install dependencies
+sudo apt install xorg-dev -y
+
+# Build binary
+go build -trimpath -ldflags "-s -w" -o HorseHunter ./cmd/horse-hunter-gui
 ```
