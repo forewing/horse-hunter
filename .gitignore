@@ -6,8 +6,9 @@
 *.dylib
 *.app
 
-horse-hunter
-horse-hunter-gui
+horse-hunter*
+horse-hunter-gui*
+HorseHunter*
 !/cmd/*
 
 # Test binary, built with `go test -c`
