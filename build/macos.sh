@@ -26,6 +26,6 @@ zip -q -m -r horse-hunter-macOS-universal.zip horse-hunter
 
 ## Build GUI
 build_binary horse-hunter-gui ./cmd/horse-hunter-gui
-fyne package -icon ./cmd/horse-hunter-gui/icon.png -name HorseHunter -release -exe horse-hunter-gui
+fyne package -icon ./cmd/horse-hunter-gui/resources/icon.png -name HorseHunter -release -exe horse-hunter-gui
 rm horse-hunter-gui
 zip -q -m -r HorseHunter-GUI-macOS-universal.zip HorseHunter.app

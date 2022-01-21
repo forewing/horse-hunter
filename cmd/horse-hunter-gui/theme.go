@@ -15,7 +15,7 @@ type myIcon struct{}
 var (
 	_ fyne.Theme = (*myTheme)(nil)
 
-	//go:embed icon.png
+	//go:embed resources/icon.png
 	embedIcon []byte
 )
 
