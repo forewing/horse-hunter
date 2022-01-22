@@ -27,6 +27,19 @@ worker.Stop()
 hunter.Cleanup()
 ```
 
+## Build script
+
+```
+$ go run ./build -h
+Usage of ./build:
+  -cli
+        build CLI
+  -gui
+        build GUI
+  -zip
+        compress output
+```
+
 ## CLI
 
 > On Linux, you need `libx11-dev` installed.
@@ -67,14 +80,8 @@ go build -trimpath -ldflags "-s -w -H=windowsgui" -o HorseHunter.exe ./cmd/horse
 2. macOS
 
 ```shell
-# Install fyne cli tools
-go install fyne.io/fyne/v2/cmd/fyne@latest
-
-# Build binary
+# Build single executable. If you want a MacOS app, use builtin script
 go build -trimpath -ldflags "-s -w" ./cmd/horse-hunter-gui
-
-# Bundle package
-fyne package -icon ./cmd/horse-hunter-gui/resources/icon.png -name HorseHunter -release -exe horse-hunter-gui
 ```
 
 3. Linux
