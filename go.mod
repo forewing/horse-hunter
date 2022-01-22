@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	fyne.io/fyne/v2 v2.1.2
+	github.com/forewing/gobuild v1.0.1
 	golang.design/x/clipboard v0.5.3
 )
 
@@ -15,6 +16,8 @@ require (
 	github.com/go-gl/glfw/v3.3/glfw v0.0.0-20211024062804-40e447a793be // indirect
 	github.com/godbus/dbus/v5 v5.0.4 // indirect
 	github.com/goki/freetype v0.0.0-20181231101311-fa8a33aabaff // indirect
+	github.com/jackmordaunt/icns/v2 v2.1.3 // indirect
+	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/srwiley/oksvg v0.0.0-20200311192757-870daf9aa564 // indirect
 	github.com/srwiley/rasterx v0.0.0-20200120212402-85cb7272f5e9 // indirect
