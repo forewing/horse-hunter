@@ -3,16 +3,17 @@ package main
 import (
 	"flag"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"runtime"
 
 	"github.com/forewing/gobuild"
+	"github.com/mholt/archiver/v4"
 )
 
 const (
 	outputPath = "./output"
 	appName    = "HorseHunter"
+	appZipName = "HorseHunter-GUI-macOS-universal.zip"
 
 	cliSource = "./cmd/horse-hunter"
 	cliOutput = "horse-hunter"
@@ -49,7 +50,7 @@ func main() {
 	flag.Parse()
 
 	if *flagZip {
-		target.Compress = gobuild.CompressAllZip
+		target.Compress = gobuild.CompressZip
 	}
 
 	if !*flagCLI && !*flagGUI {
@@ -101,8 +102,15 @@ func main() {
 			}
 
 			if *flagZip {
-				os.Chdir(outputPath)
-				exec.Command("zip", "-qmr", "HorseHunter-GUI-macOS-universal.zip", appName+".app").Run()
+				appPath := filepath.Join(outputPath, appName+".app")
+				err := gobuild.Compress(
+					filepath.Join(outputPath, appZipName),
+					map[string]string{appPath: ""},
+					archiver.Zip{})
+				if err != nil {
+					panic(err)
+				}
+				os.RemoveAll(appPath)
 			}
 		}
 	}
