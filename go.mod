@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	fyne.io/fyne/v2 v2.1.2
-	github.com/forewing/gobuild v1.1.0
+	github.com/forewing/gobuild v1.1.1
 	github.com/mholt/archiver/v4 v4.0.0-alpha.4
 	golang.design/x/clipboard v0.5.3
 )

@@ -14,8 +14,8 @@ github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/dsnet/compress v0.0.1 h1:PlZu0n3Tuv04TzpfPbrnI0HW/YwodEXDS+oPKahKF0Q=
 github.com/dsnet/compress v0.0.1/go.mod h1:Aw8dCMJ7RioblQeTqt88akK31OvO8Dhf5JflhBbQEHo=
 github.com/dsnet/golib v0.0.0-20171103203638-1ea166775780/go.mod h1:Lj+Z9rebOhdfkVLjJ8T6VcRQv3SXugXy999NBtR9aFY=
-github.com/forewing/gobuild v1.1.0 h1:q+MexbcmunNawaj4aDf1OizU7hodP6SfF931Li0WTmw=
-github.com/forewing/gobuild v1.1.0/go.mod h1:Iq1H8foc1dNSMylJYolDr6fB+5Q+9gdMCuyWVZBpfPQ=
+github.com/forewing/gobuild v1.1.1 h1:eCtGqUNyjP8XvqDICG8WN6S8Lo5JyACc55NdS3H/6nM=
+github.com/forewing/gobuild v1.1.1/go.mod h1:Iq1H8foc1dNSMylJYolDr6fB+5Q+9gdMCuyWVZBpfPQ=
 github.com/fredbi/uri v0.0.0-20181227131451-3dcfdacbaaf3 h1:FDqhDm7pcsLhhWl1QtD8vlzI4mm59llRvNzrFg6/LAA=
 github.com/fredbi/uri v0.0.0-20181227131451-3dcfdacbaaf3/go.mod h1:CzM2G82Q9BDUvMTGHnXf/6OExw/Dz2ivDj48nVg7Lg8=
 github.com/fsnotify/fsnotify v1.4.9 h1:hsms1Qyu0jgnwNXIxa+/V/PDsU6CfLf6CNO8H7IWoS4=
