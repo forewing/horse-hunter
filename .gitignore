@@ -6,6 +6,10 @@
 *.dylib
 *.app
 
+# Go Workspace
+go.work
+go.work.sum
+
 horse-hunter*
 horse-hunter-gui*
 HorseHunter*
